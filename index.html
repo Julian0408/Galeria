@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GALERIA</title>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+
+<nav>
+    <ul>
+            <li class="list active" data-filter="todos">TODOS</li>
+            <li class="list" data-filter="carros">CARROS</li>
+            <li class="list" data-filter="bicicletas">BICICLETAS</li>
+            <li class="list" data-filter="guantes">GUANTES</1li>
+            <li class="list" data-filter="cascos">CASCOS</li>
+            <li class="list" data-filter="llantas">LLANTAS</li>
+            <li class="list" data-filter="motos">MOTOS</li>
+
+    </ul>
+</nav>
+
+
+<section>
+
+    <div class="producto">
+
+        <img  id="ImageBox" data-item="carros" src="img/carros/c1-small.jpg" class="gallery-highlight" alt="">
+
+             <div class="room-preview">
+                <div><img class="itemBox" data-item="carros" src="img/carros/c1-small.jpg" onclick="myFunction(this)"></div>
+                <div><img class="itemBox" data-item="carros" src="img/carros/c2-small.jpg" onclick="myFunction(this)"></div>
+                <div><img class="itemBox" data-item="carros" src="img/carros/c3-small.jpg" onclick="myFunction(this)"></div>
+                <div><img class="itemBox" data-item="carros" src="img/carros/c4-small.jpg" onclick="myFunction(this)"></div>
+                <div><img class="itemBox" data-item="carros" src="img/carros/c5-small.jpg" onclick="myFunction(this)"></div>
+                <div><img class="itemBox" data-item="carros" src="img/carros/c6-small.jpg" onclick="myFunction(this)"></div>
+    
+            </div>
+            
+
+            <!--
+                <img  id="ImageBox" data-item="bicicletas" src="img/bicicletas/b1.jpg" class="gallery-highlight" alt="">
+
+            <div class="room-preview">
+                <div><img class="itemBox" data-item="bicicletas" src="img/bicicletas/b1.jpg" onclick="myFunction(this)"></div>
+                <div><img class="itemBox" data-item="bicicletas" src="img/bicicletas/b1.jpg" onclick="myFunction(this)"></div>
+    
+            </div>
+
+
+            <img  id="ImageBox" data-item="cascos"  src="img/cascos/cascos_5-estrellas_economicos.jpg" class="gallery-highlight" alt="">
+
+            <div class="room-preview">
+                <div><img class="itemBox" data-item="cascos" src="img/cascos/cascos_5-estrellas_economicos.jpg" onclick="myFunction(this)"></div>
+                <div><img class="itemBox" data-item="cascos" src="img/cascos/cascos_5-estrellas_economicos.jpg" onclick="myFunction(this)"></div>
+    
+            </div>
+
+            <img  id="ImageBox" data-item="guantes" src="img/guantes/adidas-guantes-portero-predator-pro.jpg" class="gallery-highlight" alt="">
+
+            <div class="room-preview">
+                <div><img class="itemBox" data-item="guantes" src="img/guantes/adidas-guantes-portero-predator-pro.jpg" onclick="myFunction(this)"></div>
+                <div><img class="itemBox" data-item="guantes" src="img/guantes/adidas-guantes-portero-predator-pro.jpg" onclick="myFunction(this)"></div>
+    
+            </div>
+
+            <img  id="ImageBox" data-item="llantas" src="img/llantas/neumaticos_0.jpg" class="gallery-highlight" alt="">
+
+            <div class="room-preview">
+                <div><img class="itemBox" data-item="llantas" src="img/llantas/neumaticos_0.jpg" onclick="myFunction(this)"></div>
+                <div><img class="itemBox" data-item="llantas" src="img/llantas/neumaticos_0.jpg" onclick="myFunction(this)"></div>
+    
+            </div>
+
+            <img  id="ImageBox" data-item="motos" src="img/motos/m2.jpg" class="gallery-highlight" alt="">
+
+            <div class="room-preview">
+                <div><img class="itemBox" data-item="motos" src="img/motos/m2.jpg" onclick="myFunction(this)"></div>
+                <div><img class="itemBox" data-item="motos" src="img/motos/m2.jpg" onclick="myFunction(this)"></div>
+    
+            </div> -->
+    </div>
+        
+    </section>
+    
+
+<script>
+    function myFunction(smallImg){
+        var fullImg = document.getElementById("ImageBox");
+        fullImg.src = smallImg.src;
+    }
+
+
+    let list = document.querySelectorAll('.list');
+    let itemBox = document. querySelectorAll('.itemBox');
+
+    for(let i = 0; i<list.length; i++){
+        list[i].addEventListener('click', function(){
+            for(let j = 0; j<list.length; j++){
+                list[j].classList.remove('active');
+            }
+            this.classList.add('active');
+
+            let dataFilter = this.getAttribute('data-filter');
+            
+
+            for(let k = 0; k<itemBox.length; k++){
+                
+                itemBox[k].classList.remove('hide');
+                itemBox[k].classList.add('active');
+
+                if(itemBox[k].getAttribute('data-item') == dataFilter || dataFilter == "todos"){
+                    itemBox[k].classList.remove('hide');
+                    itemBox[k].classList.add('active'); 
+                }
+            }
+        })
+
+    }
+    
+</script>
+
+<script src="app.js"></script>
+
+</body>
+</html>

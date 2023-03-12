@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    background: rgb(0, 0, 0);
+}
+
+nav{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    background: #000000;
+    width: 100%;
+    max-width: 118px;
+    min-width: none;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+ 
+li{
+    position: relative;
+    color: rgb(85, 83, 83);
+    font-size: 15px;
+    padding: 35px;
+
+}
+
+li:hover{
+    background: #242323;
+
+}
+nav:hover{
+    max-width: 150px;
+    transition: all 0.5s ease;
+}
+
+.prodcuto .itemBox.hide{
+    display: none;
+}
+
+.prodcuto .itemBox.show{
+    display: block;
+}
+
+ .producto{
+
+    width: 500px;
+    margin: 20px auto;
+    padding-top: 100px;
+ }
+
+
+
+ /* pocision imagenes pequeñas*/
+ .room-preview{
+    padding-top: 120px;
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    width: 100%;
+ }
+/*tamaño de las imagenes pequeñas*/
+ .room-preview img {
+    height: 110px;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.3s ease ;
+ }
+
+
